@@ -1,5 +1,5 @@
-name: 'Set Commit Status'
-description: 'Set Commit Status'
+name: 'redlock'
+description: 'Lock resource using external redis'
 inputs:
   redis:  # id of input
     description: Redis address
