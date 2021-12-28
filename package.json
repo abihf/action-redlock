@@ -1,0 +1,22 @@
+{
+  "name": "@abihf/action-redlock",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "repository": "https://github.com/abihf/action-redlock.git",
+  "author": "Abi Hafshin <abi@hafs.in>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "redlock": "^5.0.0-beta.1"
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:lock": "esbuild src/lock.ts --outfile=dist/lock.js --bundle --platform=node --target=node12.0",
+    "build:unlock": "esbuild src/unlock.ts --outfile=dist/unlock.js --bundle --platform=node --target=node12.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.8",
+    "npm-run-all": "^4.1.5"
+  }
+}

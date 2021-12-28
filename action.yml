@@ -1,0 +1,17 @@
+name: 'Set Commit Status'
+description: 'Set Commit Status'
+inputs:
+  redis:  # id of input
+    description: Redis address
+    required: true
+  key:
+    description: lock name
+    required: true
+  ttl:
+    description: time to live
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'dist/lock.js'
+  post: 'dist/unlock.js'
